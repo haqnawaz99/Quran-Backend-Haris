@@ -8,6 +8,23 @@ const AyahSchema = new mongoose.Schema({
     type: Number,
     default: null,
   },
+  notes: [
+    {
+      user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+        required: true,
+      },
+      description: {
+        type: String,
+        default: null,
+      },
+      timeStamp: {
+        type: Date,
+        default: Date.now,
+      },
+    },
+  ],
   AyaNo: {
     type: Number,
     default: null,
